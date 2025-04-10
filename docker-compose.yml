@@ -1,0 +1,14 @@
+services:
+  scraper:
+    command: python main.py
+    build:
+      context: .
+    volumes:
+        - ./downloads:/app/downloads
+    environment:
+      - SEARCH=architecture
+      - LUMMMI_SCRAPER=false
+#      - IMPOSSIBLE_IMAGES_SCRAPER=false
+      - PINTEREST_SCRAPER=true
+      - UNSPLASH_SCRAPER=true
+      - SCROLL_TIMEOUT=30
